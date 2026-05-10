@@ -1,41 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login - PHILTECH</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Philtech-GMA</title>
     <style>
-        input[type="text"], input[type="password"] { padding: 10px; margin-top: 5px; border-radius: 4px; border: 1px solid #ccc; width: 100%; box-sizing: border-box; }
-        input[type="submit"] { background-color: #800000; color: white; padding: 10px 25px; border: none; cursor: pointer; font-weight: bold; }
-        input[type="submit"]:hover { background-color: #3366ff; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background: url('banner.jpg') no-repeat center center fixed; 
+            background-size: cover; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            color: white;
+        }
+        .login-container { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            width: 350px; 
+            text-align: center;
+            border-top: 10px solid #800000;
+            color: black;
+        }
+        h2 { color: #800000; margin-bottom: 25px; }
+        label { display: block; text-align: left; font-weight: bold; margin-bottom: 5px; font-size: 14px; }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            box-sizing: border-box; 
+        }
+        .btn { 
+            background: #800000; 
+            color: white; 
+            padding: 15px; 
+            width: 100%; 
+            border: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .btn:hover { background: #3366ff; }
+        .back-home { margin-top: 15px; display: block; text-decoration: none; color: #666; font-size: 12px; }
     </style>
 </head>
-<body background="banner.jpg" bgcolor="#3c1e50" text="white">
-    <table width="100%" border="0" cellpadding="10">
-        <tr>
-            <td align="left"><a href="index.html"><img src="logo.png" width="80" alt="School Logo" border="0"></a></td>
-            <td align="right"><a href="index.html"><button type="button">HOME</button></a></td>
-        </tr>
-    </table>
-    <br><br>
-    <table width="100%" border="0">
-        <tr>
-            <td align="center">
-                <table bgcolor="white" border="1" cellpadding="40" width="400">
-                    <tr>
-                        <td align="center">
-                            <font color="red" size="6" face="Arial"><strong>LOGIN</strong></font>
-                            <form action="index.html">
-                                <p align="left"><font color="black">USERNAME</font></p>
-                                <input type="text" name="user">
-                                <p align="left"><font color="black">PASSWORD</font></p>
-                                <input type="password" name="pass">
-                                <br><br>
-                                <input type="submit" value="LOGIN">
-                            </form>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<body>
+
+<div class="login-container">
+    <img src="logo.png" width="70" style="margin-bottom: 10px;">
+    <h2>Student Login</h2>
+    
+    <label>Username</label>
+    <input type="text" id="user_input" placeholder="Enter your username">
+    
+    <label>Password</label>
+    <input type="password" id="pass_input" placeholder="Enter your password">
+    
+    <button onclick="validateLogin()" class="btn">LOGIN</button>
+    
+    <a href="Index.html" class="back-home">Back to Homepage</a>
+    <p style="font-size: 12px; margin-top: 20px;">
+        New student? <a href="enroll.html" style="color: #3366ff; text-decoration: none; font-weight: bold;">Enroll Here</a>
+    </p>
+</div>
+
+<script>
+    // Ensure this runs when the user clicks 'Login'
+    function validateLogin() {
+        const user = document.getElementById('user_input').value;
+        const pass = document.getElementById('pass_input').value;
+
+        // Retrieves data saved during the enrollment process
+        const savedU = localStorage.getItem('savedUser');
+        const savedP = localStorage.getItem('savedPass');
+
+        // Check if the credentials match and exist
+        if (user === savedU && pass === savedP && savedU !== null) {
+            localStorage.setItem('isLoggedIn', 'true'); // UNLOCKS PROFILE
+            window.location.href = "profile.html";
+        } else {
+            alert("Incorrect Username or Password!");
+        }
+    }
+</script>
+
 </body>
 </html>
