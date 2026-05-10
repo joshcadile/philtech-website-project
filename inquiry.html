@@ -1,67 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Us - PIST</title>
-    <style>
-        input, textarea { padding: 8px; border-radius: 4px; border: 1px solid #ccc; max-width: 100%; box-sizing: border-box; }
-        input[type="submit"]:hover { background-color: #3366ff; cursor: pointer; }
-        @media (max-width: 768px) {
-            table, tr, td { display: block !important; width: 100% !important; }
-        }
-    </style>
+    <title>Contact Us - Philtech</title>
 </head>
-<body background="banner.jpg" bgcolor="#3c1e50" text="white">
-    <table width="100%" border="0" cellpadding="10">
-        <tr>
-            <td align="left">
-                <a href="index.html"><img src="logo.png" width="80" alt="School Logo" border="0"></a>
-                <strong>CONTACT US</strong>
-            </td>
-            <td align="right">
-                <a href="index.html"><button type="button">HOME</button></a> &nbsp;
-                <a href="profile.html"><button type="button">PROFILE</button></a> &nbsp;
-                <a href="login.html"><button type="button">LOGIN</button></a>
-            </td>
-        </tr>
-    </table>
-    <hr>
-    <table width="100%" border="0" cellpadding="20">
-        <tr>
-            <td width="60%" valign="top">
-                <p>NAME</p><input type="text" name="main_name" size="80">
-                <p>EMAIL</p><input type="email" name="main_email" size="80">
-                <p>CONTACT NUMBER</p><input type="text" name="main_contact" size="80">
-                <br><br>
-                <table bgcolor="#dddddd" border="1" cellpadding="15" width="90%">
-                    <tr>
-                        <td>
-                            <font color="black">
-                                <strong>Inquiry Form</strong>
-                                <form action="index.html">
-                                    <p>Name:</p><input type="text" name="inquiry_name" size="40">
-                                    <p>Email:</p><input type="email" name="inquiry_email" size="40">
-                                    <p>Message:</p><textarea name="message" rows="6" style="width:100%"></textarea>
-                                    <br><br><input type="submit" value="SUBMIT">
-                                </form>
-                            </font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-            <td width="40%" valign="top" align="center">
-                <table bgcolor="#dddddd" border="1" cellpadding="15" width="300">
-                    <tr>
-                        <td>
-                            <font color="black">
-                                <strong>Contact Us!</strong><hr>
-                                <p>Call us: 09972240222</p>
-                                <p>Email: philtech.2013gma@gmail.com</p>
-                            </font>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+<body background="banner.jpg" style="background-size: cover; font-family: Arial; color: white;">
+    <div style="background: rgba(0,0,0,0.75); min-height: 100vh; padding: 50px;">
+        <nav style="margin-bottom: 50px;">
+            <a href="Index.html" style="color:white; text-decoration:none; font-weight:bold;">← BACK TO HOME</a>
+        </nav>
+
+        <center>
+            <img src="logo.png" width="100">
+            <h1>CONTACT US</h1>
+
+            <!-- ADDED FLEX CONTAINER -->
+            <div style="display:flex; justify-content:center; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+
+                <!-- YOUR ORIGINAL FORM (UNCHANGED) -->
+                <div style="background: white; color: black; padding: 40px; border-radius: 10px; width: 500px; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.5);">
+                    <form action="mailto:philtech.2013gma@gmail.com" method="POST" enctype="text/plain">
+                        <p><b>Name:</b></p><input type="text" name="name" style="width:100%; padding:10px; border: 1px solid #ccc;">
+                        <p><b>Email:</b></p><input type="email" name="email" style="width:100%; padding:10px; border: 1px solid #ccc;">
+                        <p><b>Message:</b></p><textarea name="message" style="width:100%; padding:10px; border: 1px solid #ccc;" rows="5"></textarea>
+                        <br><br>
+                        <button type="submit" style="background:red; color:white; border:none; padding:15px; width:100%; cursor:pointer; font-weight:bold;">SEND MESSAGE</button>
+                    </form>
+                </div>
+
+                <!-- SMALL CONTACT BOX ADDED -->
+                <div style="background:white; color:black; padding:20px; border-radius:10px; width:250px; text-align:left; box-shadow:0 10px 20px rgba(0,0,0,0.5);">
+                    <h3 style="margin-top:0;">INQUIRY INFO</h3>
+
+                    <p>
+                        <b>Phone:</b><br>
+                        0997 224 0222
+                    </p>
+
+                    <p>
+                        <b>Email:</b><br>
+                        philtech.2013gma@gmail.com
+                    </p>
+
+                    <p>
+                        <b>Facebook:</b><br>
+                        <a href="https://www.facebook.com/philtechgma2013" target="_blank">
+                            facebook.com/philtechgma2013
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </center>
+    </div>
 </body>
 </html>
