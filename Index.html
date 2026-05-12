@@ -4,36 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philtech-GMA | Home</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #000; color: white; scroll-behavior: smooth; }
-        .nav-bar { background: #800000; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #3366ff; position: sticky; top: 0; z-index: 1000; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
-        .hero { height: 75vh; background: url('banner.jpg'); background-size: cover; background-position: center; background-attachment: fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .section { padding: 50px 10%; background: url('banner.jpg'); background-attachment: fixed; background-size: cover; }
-        .mission-card, .vision-card { background: white; color: black; padding: 30px; border-radius: 8px; margin-bottom: 20px; border-left: 10px solid #800000; }
-        .vision-card { border-left: 10px solid #3366ff; }
-        .hymn-container { background: rgba(255, 255, 255, 0.9); color: black; padding: 40px; border: 2px dashed #3366ff; text-align: center; line-height: 2; margin: 20px 0; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        iframe { width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: none; }
-        .enroll-btn { background: #FF0000; color: white; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; display: inline-block; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="nav-bar">
-        <img src="logo.png" width="60">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="logo.png" width="50">
+            <span style="color: white; font-weight: bold; font-size: 1.3rem; letter-spacing: 1px; font-family: 'Arial Black', sans-serif;">PHILTECH-GMA</span>
+        </div>
         <div class="nav-links">
-            <a href="Index.html">HOME</a>
             <a href="profile.html">PROFILE INFORMATIONS</a>
             <a href="login.html" id="authBtn">LOGIN</a>
             <a href="inquiry.html">INQUIRY</a>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" style="height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
         <img src="logo.png" width="120" style="margin-bottom:20px;">
-        <h1 style="text-shadow: 2px 2px 4px #000; font-size: 3rem;">PHILTECH-GMA</h1>
-        <p style="text-shadow: 2px 2px 4px #000; font-size: 1.2rem; font-weight: bold;">TECHNOLOGICAL INSTITUTE OF SCIENCE ARTS AND TRADE</p><br>
-        <a href="enroll.html" class="enroll-btn">ENROLL NOW</a>
+        <h1 style="text-shadow: 2px 2px 4px #000; font-size: 3rem; color: white;">PHILTECH-GMA</h1>
+        <p style="text-shadow: 2px 2px 4px #000; font-size: 1.2rem; font-weight: bold; color: white;"> 
+            PHILIPPINE TECHNOLOGICAL INSTITUTE OF SCIENCE ARTS AND TRADE
+        </p>
+        <br>
+        <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVFNVCcarrxfZHQrPrjDz7zSCW78dQDR-h0YGe6px1F94jCQ/viewform" 
+               target="_blank" class="enroll-btn" style="background: #3366ff; padding: 15px 30px; text-decoration: none; color: white; border-radius: 5px; font-weight: bold;">ENROLL SHS</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdL7PaXJyB4A5x6bSbj1c9KScJsi5uXmxVCjmgLu-cSWZOO7Q/viewform" 
+               target="_blank" class="enroll-btn" style="background: #FF0000; padding: 15px 30px; text-decoration: none; color: white; border-radius: 5px; font-weight: bold;">ENROLL COLLEGE</a>
+        </div>
     </header>
 
     <div class="section">
@@ -48,7 +46,7 @@
             <p>PHILTECH shall emerge as the only technical school in the Philippines that can provide academic excellence, appropriate technology and produce graduates who are globally competitive and shall serve as pillar in this changing world.</p>
         </div>
 
-        <div class="hymn-container">
+        <div class="hymn-container" style="background: rgba(255, 255, 255, 0.9); color: black; padding: 40px; border: 2px dashed #3366ff; text-align: center; line-height: 2; margin: 20px 0; border-radius: 8px;">
             <h2 style="color:#800000">PhilTech Hymn</h2>
             <p>
                 PHILTECH our dear Alma Mater<br>
@@ -66,16 +64,23 @@
             </p>
         </div>
 
-        <div class="video-grid">
-            <iframe src="https://www.youtube.com/embed/l7vX1Ba5pLM"></iframe>
-            <iframe src="https://www.youtube.com/embed/QWq-dc0x7ZI"></iframe>
+        <h2 style="text-align: center; text-shadow: 2px 2px 4px #000; color: white; margin-top: 50px;">OUR SCHOOL VIDEOS</h2>
+        <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <iframe src="https://www.youtube.com/embed/l7vX1Ba5pLM" style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: none;"></iframe>
+            <iframe src="https://www.youtube.com/embed/QWq-dc0x7ZI" style="width: 100%; aspect-ratio: 16/9; border-radius: 8px; border: none;"></iframe>
         </div>
 
-        <h2 style="text-align: center; text-shadow: 2px 2px 4px #000;">OUR LOCATION</h2>
-        <div class="video-grid">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3866.476419920086!2d120.99652047486626!3d14.283729086165884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d604cb43d9bf%3A0x52511a523c76345!2sPhiltech!5e0!3m2!1sen!2sph!4v1778329624554!5m2!1sen!2sph" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h2 style="text-align: center; text-shadow: 2px 2px 4px #000; color: white;">OUR LOCATION</h2>
+        <div style="margin-bottom: 50px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.955437877526!2d121.0028!3d14.3005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d66060c6d33d%3A0xc3e4400e96035985!2sPhilTech%20GMA!5e0!3m2!1sen!2sph!4v1700000000000" 
+                    style="width: 100%; height: 450px; border-radius: 8px; border: none;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
+
+    <footer style="background: #1a1a1a; color: #bbb; padding: 25px 5%; text-align: center; border-top: 4px solid #800000; font-size: 14px; font-family: Arial, sans-serif;">
+        <p style="margin: 5px 0; color: white; font-weight: bold;">&copy; 2026 Philippine Technological Institute of Science Arts and Trade, Inc.</p>
+        <p style="margin: 5px 0;">Brgy. San Gabriel, GMA, Cavite | All Rights Reserved.</p>
+    </footer>
 
     <script>
         const authBtn = document.getElementById('authBtn');
