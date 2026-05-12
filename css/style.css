@@ -1,0 +1,73 @@
+/* General Styles */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    background: url('../banner.jpg') no-repeat center center fixed; 
+    background-size: cover; 
+    color: white; 
+}
+
+/* Navigation */
+.nav-bar { 
+    background: #800000; 
+    padding: 15px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    border-bottom: 4px solid #3366ff; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 14px; }
+
+/* Containers & Cards */
+.section { padding: 50px 10%; background: rgba(0, 0, 0, 0.6); }
+
+.mission-card, .vision-card, .hymn-container, .login-container, .selection-container { 
+    background: white; 
+    color: black; 
+    padding: 30px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mission-card { border-left: 10px solid #800000; }
+.vision-card { border-left: 10px solid #3366ff; }
+
+/* Buttons */
+.enroll-btn, .choice-btn, .btn { 
+    padding: 15px 40px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    transition: 0.3s; 
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.shs-btn { background: #3366ff; color: white; width: 80%; }
+.college-btn, .btn { background: #800000; color: white; }
+.btn-blue { background: #3366ff; color: white; }
+/* Update sa login container para malinis ang alignment */
+.login-container { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    width: 320px; 
+    max-width: 90%; 
+    text-align: center;
+    border-top: 10px solid #800000;
+    margin: 20px auto; /* Para laging nasa gitna */
+}
+
+/* Para sa Google Button alignment */
+#googleBtn { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 15px; 
+}
