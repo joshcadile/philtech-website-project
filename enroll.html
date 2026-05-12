@@ -1,87 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Enrollment - Philtech</title>
-    <style>
-        body { background: url('banner.jpg') no-repeat center center fixed; background-size: cover; font-family: Arial; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .box { background: rgba(255, 255, 255, 0.95); width: 500px; padding: 30px; border-radius: 15px; border-top: 10px solid #800000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .step { display: none; }
-        .active { display: block; }
-        label { font-weight: bold; font-size: 13px; display: block; margin-top: 10px; }
-        input, select { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        .btn { background: #800000; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; font-weight: bold; margin-top: 20px; }
-        .preview-box { background: #f0f0f0; padding: 15px; border-radius: 5px; font-size: 14px; margin-top: 10px; line-height: 1.6; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment Selection - Philtech</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="box">
-        <center><img src="logo.png" width="60"></center>
-        
-        <div class="step active" id="s1">
-            <h2 align="center">Enrollment Form</h2>
-            <label>Student Full Name</label><input type="text" id="name">
-            <label>Email</label><input type="email" id="email">
-            <label>Address</label><input type="text" id="addr">
-            <label>Phone</label><input type="text" id="phone">
-            <label>Course</label><select id="course"><option>Bachelor of Science in Office Administration</option><option>Bachelor of Science in Computer Science</option><option>Bachelor of Technical Vocational Teacher Education</option></select>
-            <label>Parent/Guardian Name</label><input type="text" id="gname">
-            <label>Parent/Guardian Phone</label><input type="text" id="gphone">
-            <button class="btn" onclick="showPreview()">REVIEW INFORMATIONS</button>
-        </div>
+<body style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
 
-        <div class="step" id="s2">
-            <h2 align="center">Preview Info</h2>
-            <div class="preview-box" id="preView"></div>
-            <button class="btn" onclick="showStep(3)" style="background:#3366ff">CONFIRM & SET LOGIN</button>
-            <button class="btn" onclick="showStep(1)" style="background:#666">EDIT DETAILS</button>
-        </div>
+<div class="selection-container">
+    <img src="logo.png" width="80" style="margin-bottom: 15px;">
+    <h2 style="color: #800000; margin-bottom: 30px;">SELECT ENROLLMENT LEVEL</h2>
+    
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfVFNVCcarrxfZHQrPrjDz7zSCW78dQDR-h0YGe6px1F94jCQ/viewform" 
+       target="_blank" class="choice-btn shs-btn" style="display: block; margin-bottom: 15px;">SENIOR HIGH SCHOOL</a>
+    
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdL7PaXJyB4A5x6bSbj1c9KScJsi5uXmxVCjmgLu-cSWZOO7Q/viewform" 
+       target="_blank" class="choice-btn college-btn" style="display: block;">COLLEGE DEPARTMENT</a>
 
-        <div class="step" id="s3">
-            <h2 align="center">Set Login Credentials</h2>
-            <label>Create Username</label><input type="text" id="user">
-            <label>Create Password</label><input type="password" id="pass">
-            <button class="btn" onclick="saveAll()">FINISH ENROLLMENT</button>
-        </div>
-    </div>
+    <br>
+    <a href="Index.html" style="color: #666; text-decoration: none; font-size: 14px;">← Back to Home</a>
+</div>
 
-    <script>
-        function showStep(n) { 
-            document.querySelectorAll('.step').forEach(s => s.classList.remove('active')); 
-            document.getElementById('s'+n).classList.add('active'); 
-        }
-        
-        function showPreview() {
-            const data = `
-                <b>Student Name:</b> ${document.getElementById('name').value}<br>
-                <b>Email:</b> ${document.getElementById('email').value}<br>
-                <b>Address:</b> ${document.getElementById('addr').value}<br>
-                <b>Phone:</b> ${document.getElementById('phone').value}<br>
-                <b>Course:</b> ${document.getElementById('course').value}<br>
-                <hr>
-                <b>Guardian:</b> ${document.getElementById('gname').value}<br>
-                <b>Guardian Phone:</b> ${document.getElementById('gphone').value}
-            `;
-            document.getElementById('preView').innerHTML = data;
-            showStep(2);
-        }
-
-        function saveAll() {
-            // SAVING ALL DATA
-            localStorage.setItem('studentName', document.getElementById('name').value);
-            localStorage.setItem('studentEmail', document.getElementById('email').value);
-            localStorage.setItem('studentAddress', document.getElementById('addr').value);
-            localStorage.setItem('studentPhone', document.getElementById('phone').value);
-            localStorage.setItem('studentCourse', document.getElementById('course').value);
-            localStorage.setItem('guardianName', document.getElementById('gname').value);
-            localStorage.setItem('guardianPhone', document.getElementById('gphone').value);
-            
-            // SAVING CREDENTIALS
-            localStorage.setItem('savedUser', document.getElementById('user').value);
-            localStorage.setItem('savedPass', document.getElementById('pass').value);
-            
-            alert("Enrollment Complete! You can now login."); 
-            window.location.href="login.html";
-        }
-    </script>
 </body>
 </html>
