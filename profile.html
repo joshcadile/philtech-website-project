@@ -1,77 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Official Profile - PHILTECH</title>
-    <style>
-        body { font-family: Arial; margin: 0; background: url('banner.jpg') no-repeat center center fixed; background-size: cover; }
-        .overlay { background: rgba(0, 0, 0, 0.7); min-height: 100vh; padding: 40px 0; display: flex; flex-direction: column; align-items: center; }
-        .document { background: white; width: 750px; padding: 40px; border-radius: 5px; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        #no-data { background: white; padding: 30px; border-radius: 5px; text-align: center; width: 400px; display: none; }
-        .info-row { display: flex; border-bottom: 1px solid #eee; padding: 10px 0; }
-        .label { width: 250px; font-weight: bold; color: #800000; }
-        .btn { background: #800000; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; border: none; cursor: pointer; font-weight: bold; margin: 5px; display: inline-block; }
-        .btn-blue { background: #3366ff; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="overlay">
-    <div id="no-data">
-        <h2 style="color:#800000">NO STUDENT DATA</h2>
-        <p>Please Enroll or Login to view your profile.</p>
-        <div style="display: flex; justify-content: center;">
-            <a href="enroll.html" class="btn">ENROLL</a>
-            <a href="login.html" class="btn btn-blue">LOGIN</a>
-            <a href="Index.html" class="btn btn-blue">HOME</a>
+    <div style="background: rgba(0, 0, 0, 0.7); min-height: 100vh; padding: 40px; display: flex; justify-content: center;">
+        <div id="profileDoc" class="mission-card" style="width: 100%; max-width: 600px; display: none;">
+            <center>
+                <img src="logo.png" width="80">
+                <h1 style="color:#800000; font-size: 1.5rem;">STUDENT ENROLLMENT PROFILE</h1>
+            </center>
+            <hr>
+            <p><strong>Name:</strong> <span id="resName"></span></p>
+            <p><strong>Course:</strong> <span id="resCourse"></span></p>
+            <center style="margin-top: 30px;">
+                <button onclick="window.print()" class="btn" style="background: #3366ff;">PRINT AS PDF</button>
+                <a href="Index.html" class="btn">HOME</a>
+                <button onclick="logout()" class="btn" style="background: #444;">LOGOUT</button>
+            </center>
         </div>
     </div>
 
-    <div class="document" id="profileDoc">
-        <center>
-            <img src="logo.png" width="80">
-            <h1 style="color:#800000; margin: 10px 0;">STUDENT ENROLLMENT PROFILE</h1>
-        </center>
-        <hr>
-        <div class="info-row"><div class="label">FULL NAME:</div><div id="resName"></div></div>
-        <div class="info-row"><div class="label">EMAIL ADDRESS:</div><div id="resEmail"></div></div>
-        <div class="info-row"><div class="label">HOME ADDRESS:</div><div id="resAddress"></div></div>
-        <div class="info-row"><div class="label">CONTACT NUMBER:</div><div id="resPhone"></div></div>
-        <div class="info-row"><div class="label">COURSE / STRAND:</div><div id="resCourse"></div></div>
-        <br>
-        <h3 style="color:#3366ff; border-bottom: 2px solid #3366ff;">PARENT/GUARDIAN INFO</h3>
-        <div class="info-row"><div class="label">GUARDIAN NAME:</div><div id="resGName"></div></div>
-        <div class="info-row"><div class="label">GUARDIAN CONTACT:</div><div id="resGPhone"></div></div>
-        
-        <br><br>
-        <center>
-            <button onclick="window.print()" class="btn btn-blue">PRINT AS PDF</button>
-            <button onclick="localStorage.removeItem('isLoggedIn'); window.location.href='Index.html';" class="btn">LOGOUT</button>
-            <a href="Index.html" class="btn btn-blue">HOME</a>
-        </center>
-    </div>
-</div>
-
-<script>
-    function loadData() {
+    <script>
         const loggedIn = localStorage.getItem('isLoggedIn');
         
         if(loggedIn === 'true') {
             document.getElementById('profileDoc').style.display = "block";
-            document.getElementById('no-data').style.display = "none";
-            
-            // Getting data using the exact same keys from enroll.html
             document.getElementById('resName').innerText = localStorage.getItem('studentName') || "N/A";
-            document.getElementById('resEmail').innerText = localStorage.getItem('studentEmail') || "N/A";
-            document.getElementById('resAddress').innerText = localStorage.getItem('studentAddress') || "N/A";
-            document.getElementById('resPhone').innerText = localStorage.getItem('studentPhone') || "N/A";
             document.getElementById('resCourse').innerText = localStorage.getItem('studentCourse') || "N/A";
-            document.getElementById('resGName').innerText = localStorage.getItem('guardianName') || "N/A";
-            document.getElementById('resGPhone').innerText = localStorage.getItem('guardianPhone') || "N/A";
         } else {
-            document.getElementById('no-data').style.display = "block";
-            document.getElementById('profileDoc').style.display = "none";
+            window.location.href = "login.html";
         }
-    }
-    loadData();
-</script>
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = "Index.html";
+        }
+    </script>
 </body>
 </html>
